@@ -1,0 +1,21 @@
+# Azure Functions local settings (secrets)
+local.settings.json
+
+# Node
+node_modules/
+npm-debug.log*
+
+# VS Code
+.vscode/
+
+# Build output
+dist/
+
+# Azurite (local storage emulator)
+__blobstorage__
+__queuestorage__
+__azurite_db*__.json
+
+# OS files
+.DS_Store
+Thumbs.db

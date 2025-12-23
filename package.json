@@ -1,0 +1,31 @@
+{
+  "name": "cw2-portfolio-functions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/functions/*.js",
+  "scripts": {
+    "start": "func start",
+    "test": "echo \"No tests yet...\""
+  },
+  "dependencies": {
+    "@azure/cosmos": "^4.9.0",
+    "@azure/functions": "^4.0.0",
+    "@azure/storage-blob": "^12.29.1",
+    "uuid": "^13.0.0"
+  },
+  "devDependencies": {
+    "azure-functions-core-tools": "^4.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pjeffery-crypto/cw2-portfolio-functions.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/pjeffery-crypto/cw2-portfolio-functions/issues"
+  },
+  "homepage": "https://github.com/pjeffery-crypto/cw2-portfolio-functions#readme"
+}
