@@ -28,23 +28,20 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
 
-      - name: Resolve dependencies, build, test
+      - name: Install, build, test (keep prod dependencies)
         run: |
           cd "${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}"
           npm ci
+          npm prune --omit=dev
           npm run build --if-present
           npm run test --if-present
-
-      # IMPORTANT: avoid deploying node_modules (often causes ZipDeploy/Kudu 500)
-      - name: Remove node_modules before packaging
-        run: |
-          rm -rf node_modules
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
-          name: functionapp
+          name: node-app
           path: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+
 
   deploy:
     runs-on: ubuntu-latest
